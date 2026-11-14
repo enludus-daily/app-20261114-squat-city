@@ -78,7 +78,7 @@ struct ResultView: View {
                 Plate {
                     HStack(spacing: 10) {
                         Image(systemName: "seal").foregroundStyle(Theme.deep)
-                        Text(trf("今日の注文を済ませました。屋上に「%@」", "Commission complete. A %@ on the roof", o.name))
+                        Text(trf("今日の注文を済ませました。屋上に「%@」", "Commission complete: %@ added to the roof", o.name))
                             .font(.system(size: 14)).foregroundStyle(Theme.ink)
                     }
                 }

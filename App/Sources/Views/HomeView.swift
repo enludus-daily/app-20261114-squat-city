@@ -172,7 +172,7 @@ struct HomeView: View {
                     }
                 }
                 .frame(height: 5)
-                Text(trf("ごほうび：屋上に「%@」", "Reward: a %@ on today's roof", c.ornament.name))
+                Text(trf("ごほうび：屋上に「%@」", "Reward: %@ on today's roof", c.ornament.name))
                     .font(.system(size: 12)).foregroundStyle(Theme.deep)
             }
         }

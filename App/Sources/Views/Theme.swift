@@ -31,8 +31,12 @@ enum Theme {
     static let snow = Color(hex: 0xFDFDFF)
 
     // 書体：見出しと数字はセリフ、本文はサンセリフ
+    /// 日本語は明朝（ヒラギノ明朝）、英語は New York。システムのセリフは日本語に明朝を当てないため、言語で分ける
     static func serif(_ size: CGFloat, _ weight: Font.Weight = .regular) -> Font {
-        .system(size: size, weight: weight, design: .serif)
+        if Lang.isJapanese {
+            return .custom(weight == .regular ? "HiraMinProN-W3" : "HiraMinProN-W6", size: size)
+        }
+        return .system(size: size, weight: weight, design: .serif)
     }
     static func label(_ size: CGFloat = 11) -> Font { .system(size: size, weight: .medium) }
 

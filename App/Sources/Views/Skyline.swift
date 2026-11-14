@@ -328,6 +328,8 @@ struct BuildingView: View, Animatable {
     var goal: Int?
     var theme: CityTheme = .day
     var drop: Double = 1
+    /// 少なくとも何階ぶんの高さで描くか（小さな見本では小さく）
+    var minFloors: Int = 10
 
     /// いちばん上のブロックが落ちてくる動き（Canvas を毎フレーム描き直す）
     nonisolated var animatableData: Double {
@@ -339,8 +341,10 @@ struct BuildingView: View, Animatable {
         let p = CityPalette.of(theme)
         Canvas { ctx, size in
             let groundY = size.height - 16
-            let target = max(goal ?? 0, build.height + 2, 10)
-            let bh = min(30, (groundY - 50) / CGFloat(target + 2))
+            let target = max(goal ?? 0, build.height + 2, minFloors)
+            // 上の余白は画面の高さに合わせる（小さな見本で建物が消えないように）
+            let top = min(50, size.height * 0.15)
+            let bh = max(2, min(30, (groundY - top) / CGFloat(target + 2)))
             let slot = min(size.width * 0.8, bh * 7)
             var ground = Path()
             ground.move(to: CGPoint(x: size.width * 0.08, y: groundY)); ground.addLine(to: CGPoint(x: size.width * 0.92, y: groundY))

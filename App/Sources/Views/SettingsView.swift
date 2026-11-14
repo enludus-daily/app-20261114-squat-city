@@ -94,7 +94,7 @@ struct PaywallView: View {
                         .font(Theme.serif(28)).kerning(-0.6).foregroundStyle(Theme.ink)
                     HStack(alignment: .bottom, spacing: 6) {
                         ForEach([Move.wide, .bulgarian, .jump, .lunge]) { m in
-                            BuildingView(build: MovesView.preview(m), theme: .dusk)
+                            BuildingView(build: MovesView.preview(m), theme: .dusk, minFloors: 4)
                                 .frame(maxWidth: .infinity).frame(height: 96)
                         }
                     }

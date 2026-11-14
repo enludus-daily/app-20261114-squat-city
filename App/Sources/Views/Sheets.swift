@@ -148,7 +148,7 @@ struct MovesView: View {
 
     private func row(_ m: Move) -> some View {
         HStack(spacing: 14) {
-            BuildingView(build: Self.preview(m), theme: .day)
+            BuildingView(build: Self.preview(m), theme: .day, minFloors: 4)
                 .frame(width: 58, height: 74)
                 .background(Theme.skyTop.opacity(0.5), in: RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous))
             VStack(alignment: .leading, spacing: 3) {

@@ -348,7 +348,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reward: a %@ on today's roof"
+            "value": "Reward: %@ on today's roof"
           }
         }
       }
@@ -1052,7 +1052,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Commission complete. A %@ on the roof"
+            "value": "Commission complete: %@ added to the roof"
           }
         }
       }
