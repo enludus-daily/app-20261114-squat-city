@@ -150,7 +150,11 @@ enum Launch {
         try? await Task.sleep(for: .milliseconds(300))
         switch scene {
         case "session", "nosensor":
-            model.makeMotion = scene == "session" ? { StillMotionSource() } : { UnavailableMotionSource() }
+            if scene == "session" {
+                model.makeMotion = { StillMotionSource() }
+            } else {
+                model.makeMotion = { UnavailableMotionSource() }
+            }
             model.goalCount = 15
             model.startSession()
             if var s = model.session {
