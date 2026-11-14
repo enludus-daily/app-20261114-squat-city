@@ -6,45 +6,55 @@ struct HomeView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.horizontalSizeClass) private var sizeClass
 
+    /// 全画面の場面・シートの下にいる間は、主なボタンの印を外す（UI テストが隠れたボタンを探さないように）
+    private var covered: Bool { model.cover != nil || model.activeSheet != nil }
+    private func mainID(_ name: String) -> String { covered ? "home.covered." + name : "main." + name }
+
     var body: some View {
         ZStack {
             Theme.paper.ignoresSafeArea()
             Blueprint().ignoresSafeArea().opacity(0.6)
-            if sizeClass == .regular {
-                HStack(alignment: .top, spacing: 28) {
-                    VStack(alignment: .leading, spacing: 16) {
-                        header
-                        city(height: 420)
-                        stats
+            // 見出しと「建てはじめる」は固定し、真ん中だけをスクロールする（主なボタンがスクロールの下に重ならない）
+            VStack(spacing: 0) {
+                header
+                    .padding(.horizontal, sizeClass == .regular ? 28 : 18)
+                    .padding(.top, 8)
+                    .padding(.bottom, 8)
+                if sizeClass == .regular {
+                    HStack(alignment: .top, spacing: 28) {
+                        VStack(alignment: .leading, spacing: 16) {
+                            city(height: 400)
+                            stats
+                        }
+                        .frame(maxWidth: .infinity)
+                        ScrollView {
+                            VStack(spacing: 14) {
+                                commissionPlate
+                                planPlate
+                                townLink
+                            }
+                        }
+                        .frame(maxWidth: 380)
                     }
-                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 28)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                } else {
                     ScrollView {
-                        VStack(spacing: 14) {
+                        VStack(alignment: .leading, spacing: 16) {
+                            city(height: 250)
+                            stats
                             commissionPlate
                             planPlate
+                            townLink
                         }
+                        .padding(.horizontal, 18)
+                        .padding(.bottom, 16)
                     }
-                    .frame(maxWidth: 380)
+                    .frame(maxHeight: .infinity)
                 }
-                .padding(28)
-            } else {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        header
-                        city(height: 250)
-                        stats
-                        commissionPlate
-                        planPlate
-                        townLink
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.top, 8)
-                    .padding(.bottom, 24)
-                }
+                buildBar
             }
         }
-        // 主なボタンは、スクロールしなくても見える位置に固定する
-        .safeAreaInset(edge: .bottom) { buildBar }
     }
 
     private var header: some View {
@@ -63,14 +73,14 @@ struct HomeView: View {
             }
             .foregroundStyle(Theme.deep)
             .accessibilityLabel(tr("今月の街を共有", "Share this month's city"))
-            .accessibilityIdentifier("main.share")
+            .accessibilityIdentifier(mainID("share"))
             Button { model.press(); model.activeSheet = .settings } label: {
                 Image(systemName: "slider.horizontal.3").font(.system(size: 16, weight: .regular))
                     .frame(width: 44, height: 44)
             }
             .foregroundStyle(Theme.deep)
             .accessibilityLabel(tr("設定", "Settings"))
-            .accessibilityIdentifier("main.settings")
+            .accessibilityIdentifier(mainID("settings"))
         }
     }
 
@@ -257,7 +267,7 @@ struct HomeView: View {
                 }
             }
             .buttonStyle(PrimaryButtonStyle())
-            .accessibilityIdentifier("main.build")
+            .accessibilityIdentifier(mainID("build"))
             Text(tr("iPhone を胸に当てるか、前のポケットへ", "Hold your iPhone to your chest, or put it in a front pocket"))
                 .font(.system(size: 11)).foregroundStyle(Theme.sub)
         }
@@ -266,6 +276,7 @@ struct HomeView: View {
         .padding(.bottom, 6)
         .frame(maxWidth: sizeClass == .regular ? 420 : .infinity)
         .frame(maxWidth: .infinity)
-        .background(Theme.paper.opacity(0.96))
+        .background(Theme.paper.opacity(0.96).ignoresSafeArea(edges: .bottom))
+        .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: Theme.hairline) }
     }
 }

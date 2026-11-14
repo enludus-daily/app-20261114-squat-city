@@ -78,8 +78,8 @@ struct PaywallView: View {
     @State private var message: String?
 
     var body: some View {
-        ZStack {
-            Theme.paper.ignoresSafeArea()
+        // 値段と購入はスクロールの外に固定する（スクロールの下に重ねない）
+        VStack(spacing: 0) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {
@@ -114,8 +114,9 @@ struct PaywallView: View {
                 .padding(.horizontal, 22)
                 .padding(.bottom, 16)
             }
+            buyBar
         }
-        .safeAreaInset(edge: .bottom) { buyBar }
+        .background(Theme.paper.ignoresSafeArea())
     }
 
     private var headline: String {
