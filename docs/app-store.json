@@ -1,21 +1,21 @@
 {
   "_doc": "App Store Connect に API で入れる情報（.github/workflows/asc.yml の metadata が読む）。文字数：name・subtitle 30、keywords 100（カンマ区切り）、promotionalText 170、description 4000。カテゴリの ID は EDUCATION・PRODUCTIVITY・UTILITIES・LIFESTYLE・HEALTH_AND_FITNESS など。審査への提出と App プライバシーの申告は本人が行う。",
   "locale": "ja",
-  "name": "",
-  "subtitle": "",
-  "primaryCategory": "",
-  "secondaryCategory": "",
-  "supportUrl": "https://github.com/enludus-daily/__REPO__/issues",
-  "privacyPolicyUrl": "https://github.com/enludus-daily/__REPO__/blob/main/PRIVACY.md",
-  "keywords": "",
-  "promotionalText": "",
-  "description": "",
-  "whatToTest": "",
+  "name": "しゃがんで建てる：スクワットで街づくり",
+  "subtitle": "1回が1ブロック、毎日1棟のビル",
+  "primaryCategory": "HEALTH_AND_FITNESS",
+  "secondaryCategory": "LIFESTYLE",
+  "supportUrl": "https://github.com/enludus-daily/app-20261114-squat-city/issues",
+  "privacyPolicyUrl": "https://github.com/enludus-daily/app-20261114-squat-city/blob/main/PRIVACY.md",
+  "keywords": "スクワット,筋トレ,カウンター,宅トレ,空気椅子,街づくり,習慣,運動不足,ビル,ゲーム,脚,30日",
+  "promotionalText": "しゃがんで立つ1回が、ビルの1ブロックに。2秒かけて下ろすと頑丈なブロック。今日の回数が今日のビルの高さになり、1か月で自分の通りのスカイラインができます。",
+  "description": "しゃがんで立つ 1 回が、ビルの 1 ブロックになるスクワットのアプリです。\n\n■ 1 日 1 棟、1 か月で 1 本の通り\n今日の回数が今日のビルの高さに。毎日 1 棟ずつ建って、月末には自分の通りのスカイラインができます。\n\n■ ゆっくりが強い\n2 秒かけて下ろすと頑丈なブロック。速いとぐらぐらのブロックになり、ビルが少し傾きます。空気椅子の秒は土台になり、敷地が広がります。\n\n■ 胸に当てるか、ポケットへ\niPhone の動きのセンサーで、しゃがんで立つ 1 回を数えます。判定はゆるめが既定で、深くしゃがんでも弾きません。数え漏れは ＋1 で足せます。回数は自分で決め、エンドレスもあります。\n\n■ 毎日の楽しみ\n・日替わりの注文（60 種）を済ませると、屋上に飾りが置かれます\n・通算のブロックで、街路樹・噴水・観覧車など 40 種の物が街に置かれます\n・今月のスカイラインを画像で共有\n\n■ Pro（買い切り）\n・やり方 4 種と建物 4 種（ワイド＝倉庫、ブルガリアン＝塔、ジャンプ＝灯台、ランジ＝時計塔）\n・夜景と雪の街\n・月のタイムラプス\n・過去の月の街\n\nデータはこの iPhone の中だけに保存します。ログイン・広告・解析はありません。\n痛みがあるときは休んでください。",
+  "whatToTest": "iPhone を胸に当てるか前のポケットに入れて、ホームの「建てはじめる」からスクワットをしてください。1 回ごとにブロックが積み上がるか、2 秒かけて下ろすと「頑丈」、速いと「ぐらぐら」になるか、数え漏れを ＋1 で足せるか。設定の「判定のゆるさ」も試してください。3 日目の結果のあとに Pro の案内が 1 回出ます。",
   "en-US": {
-    "name": "",
-    "subtitle": "",
-    "keywords": "",
-    "promotionalText": "",
-    "description": ""
+    "name": "Squat City: Build by Squatting",
+    "subtitle": "One squat, one block. Daily.",
+    "keywords": "squat,squats,counter,workout,home,legs,challenge,30 day,city,builder,habit,fitness,rep",
+    "promotionalText": "Every squat adds one block to today's building. Lower slowly for solid blocks. Your daily reps set the height, and in a month your street has a skyline.",
+    "description": "Every squat you do becomes one block of a building.\n\nONE BUILDING A DAY\nToday's reps set today's height. A new building rises each day, and by the end of the month your street has its own skyline.\n\nSLOW IS STRONG\nLower for 2 seconds and you get a solid block. Rush it and the block wobbles, making the building lean. Holding a low sit lays a foundation that widens the lot.\n\nCHEST OR POCKET\nHold your iPhone to your chest or slip it into a front pocket. Motion sensors count each squat. Detection is easy-going by default, going deeper never fails a rep, and you can add a missed one with +1. Pick your own rep goal, or go endless.\n\nSOMETHING NEW EVERY DAY\n- A daily commission (60 of them) puts an ornament on your roof\n- 40 landmarks appear as your total grows: trees, fountains, a Ferris wheel and more\n- Share this month's skyline as an image\n\nPRO (ONE-TIME PURCHASE)\n- 4 moves and 4 building styles: Wide = warehouse, Bulgarian = tower, Jump = lighthouse, Lunge = clock tower\n- Night and snow cities\n- Month timelapse\n- Every past month\n\nYour data stays on this iPhone. No login, no ads, no analytics.\nRest if anything hurts."
   }
 }

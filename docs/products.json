@@ -3,15 +3,15 @@
   "products": [
     {
       "type": "NON_CONSUMABLE",
-      "productId": "com.enludus.daily.template.pro",
-      "referenceName": "Pro",
+      "productId": "com.enludus.daily.009.pro",
+      "referenceName": "Squat City Pro",
       "price": 480,
       "familySharable": true,
-      "reviewNote": "Pro を買うと、すべての〇〇と詳しい振り返りが使えます。課金の画面は設定 > Pro から開けます。",
+      "reviewNote": "Pro を買うと、やり方 4 種（ワイド・ブルガリアン・ジャンプ・ランジ）と建物 4 種、街のテーマ（夜景・雪）、月のタイムラプス、過去の月の街が使えます。課金の画面は設定 > Pro を見る から開けます。",
       "reviewScreenshot": "docs/iap/paywall.png",
       "localizations": [
-        {"locale": "ja", "name": "Pro", "description": "すべての〇〇と詳しい振り返り"},
-        {"locale": "en-US", "name": "Pro", "description": "All 〇〇 and detailed reviews"}
+        {"locale": "ja", "name": "しゃがんで建てる Pro", "description": "やり方4種と建物4種・夜景と雪・月のタイムラプス"},
+        {"locale": "en-US", "name": "Squat City Pro", "description": "4 moves & buildings, night & snow, timelapse"}
       ]
     }
   ]

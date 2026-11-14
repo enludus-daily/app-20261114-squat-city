@@ -1,42 +1,3038 @@
 {
   "sourceLanguage": "ja",
   "strings": {
-    "はじめる": {
+    "%@は Pro のやり方です": {
+      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Start"
+            "value": "%@ is a Pro move"
           }
         }
       }
     },
-    "リセット": {
+    "%d ブロック": {
+      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset"
+            "value": "%d blocks"
           }
         }
       }
     },
-    "1 たす": {
+    "%d 回にする": {
+      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add 1"
+            "value": "Set to %d"
           }
         }
       }
     },
-    "回数 %lld": {
+    "%d 秒": {
+      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Count %lld"
+            "value": "%d seconds"
+          }
+        }
+      }
+    },
+    "%d、目標です": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d. Goal!"
+          }
+        }
+      }
+    },
+    "1 回お試し": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try once"
+          }
+        }
+      }
+    },
+    "1 回ふやす": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One more"
+          }
+        }
+      }
+    },
+    "1 回へらす": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One fewer"
+          }
+        }
+      }
+    },
+    "1 日目から 1 棟ずつ建っていく様子を再生": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch the month rise, one building a day"
+          }
+        }
+      }
+    },
+    "1 秒未満": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "under 1 sec"
+          }
+        }
+      }
+    },
+    "1〜2 秒": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1–2 sec"
+          }
+        }
+      }
+    },
+    "2 秒かけて下ろし、1 秒で立つ。立ったら 1 ブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower for 2 sec, stand in 1. Each stand places a block"
+          }
+        }
+      }
+    },
+    "2 秒かけて下ろすと、\n頑丈なブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower for 2 seconds\nfor a solid block"
+          }
+        }
+      }
+    },
+    "2 秒以上": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 sec+"
+          }
+        }
+      }
+    },
+    "3 棟目が建ちました": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your third building is up"
+          }
+        }
+      }
+    },
+    "Pro にする　%@（買い切り）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Pro · %@ one-time"
+          }
+        }
+      }
+    },
+    "Pro を使っています。ありがとうございます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're on Pro. Thank you"
+          }
+        }
+      }
+    },
+    "Pro を見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Pro"
+          }
+        }
+      }
+    },
+    "iPhone を胸に当てるか、前のポケットへ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold your iPhone to your chest, or put it in a front pocket"
+          }
+        }
+      }
+    },
+    "「%@」は Pro の街です": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is a Pro look"
+          }
+        }
+      }
+    },
+    "いい出来です。次は %d 回にしますか": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great form. Make it %d next time?"
+          }
+        }
+      }
+    },
+    "いちばん高い": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tallest"
+          }
+        }
+      }
+    },
+    "いまは購入できません": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not available right now"
+          }
+        }
+      }
+    },
+    "おつかれさま": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nice work"
+          }
+        }
+      }
+    },
+    "お尻・片脚ずつ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Glutes, one leg"
+          }
+        }
+      }
+    },
+    "きっちり": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strict"
+          }
+        }
+      }
+    },
+    "ぐらぐら": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wobbly"
+          }
+        }
+      }
+    },
+    "ぐらぐらが多く、ビルが %.1f 度傾いています。頑丈なブロックを足すと、まっすぐに戻ります": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too many wobbly blocks: the building leans %.1f°. Add solid blocks to straighten it"
+          }
+        }
+      }
+    },
+    "ぐらぐら（%.1f 秒）。ビルが少し傾きます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wobbly (%.1f sec). The building leans a little"
+          }
+        }
+      }
+    },
+    "この端末では動きを読めません。1 回ごとに ＋1 を押してください": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This device can't read motion. Tap +1 after each rep"
+          }
+        }
+      }
+    },
+    "この端末では動きを読めません。始めると時計で数えます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This device can't read motion. Start the timer instead"
+          }
+        }
+      }
+    },
+    "ごほうび：屋上に「%@」": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward: a %@ on today's roof"
+          }
+        }
+      }
+    },
+    "しゃがむ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "low"
+          }
+        }
+      }
+    },
+    "しゃがんだ姿勢で止まると、秒が進みます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold the low position and the seconds count up"
+          }
+        }
+      }
+    },
+    "しゃがんで、軽く跳ぶ。着地はやわらかく": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squat, then hop lightly. Land softly"
+          }
+        }
+      }
+    },
+    "しゃがんで建てる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squat City"
+          }
+        }
+      }
+    },
+    "しゃがんで立つ 1 回が、\nビルの 1 ブロックになる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One squat,\none block of your building"
+          }
+        }
+      }
+    },
+    "そのほか": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "つぎへ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "はじめます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's build"
+          }
+        }
+      }
+    },
+    "ひなたぼっこの芝生": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sunny patch of lawn"
+          }
+        }
+      }
+    },
+    "ふくらはぎ・心拍": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calves & cardio"
+          }
+        }
+      }
+    },
+    "ふつう": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plain"
+          }
+        }
+      }
+    },
+    "ふつうのブロック（%.1f 秒）。2 秒かけると頑丈に": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plain block (%.1f sec). Take 2 sec for solid"
+          }
+        }
+      }
+    },
+    "まだ建てた月はありません。最初の 1 回で、今月の 1 棟目が建ちます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No months yet. Your first rep raises this month's first building"
+          }
+        }
+      }
+    },
+    "まっすぐ建っています。ゆっくり下ろせた証拠です": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standing straight. That's slow, steady lowering"
+          }
+        }
+      }
+    },
+    "やり方 4 種と建物 4 種": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 moves, 4 building styles"
+          }
+        }
+      }
+    },
+    "やり方ごとに建物の種類が変わります。1 日の中で混ぜると、階ごとに違う建物が積み上がります": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each move raises a different kind of building. Mix them in a day for a stacked, mixed-style tower"
+          }
+        }
+      }
+    },
+    "やり方を選ぶ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose move"
+          }
+        }
+      }
+    },
+    "ゆっくりが強い": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow is strong"
+          }
+        }
+      }
+    },
+    "ゆるめ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Easy"
+          }
+        }
+      }
+    },
+    "アマチュア無線の塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A ham radio tower"
+          }
+        }
+      }
+    },
+    "アンテナ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antenna"
+          }
+        }
+      }
+    },
+    "アーチの橋": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An arched bridge"
+          }
+        }
+      }
+    },
+    "エンドレス": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Endless"
+          }
+        }
+      }
+    },
+    "カフェのテラスの屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A café terrace roof"
+          }
+        }
+      }
+    },
+    "ガス灯の通り": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A gaslit lane"
+          }
+        }
+      }
+    },
+    "ジャンプ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jump squat"
+          }
+        }
+      }
+    },
+    "スクワット": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squat"
+          }
+        }
+      }
+    },
+    "スクワット・空気椅子・街づくり・今日の注文・共有は、ずっと無料です": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Squats, holds, city building, daily commissions and sharing stay free forever"
+          }
+        }
+      }
+    },
+    "タイムラプスのお試しは使い終わりました": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've used your free timelapse"
+          }
+        }
+      }
+    },
+    "テレビ局のパラボラ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A TV station dish"
+          }
+        }
+      }
+    },
+    "ハーブの鉢を三つ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three pots of herbs"
+          }
+        }
+      }
+    },
+    "バス停": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bus stop"
+          }
+        }
+      }
+    },
+    "バス停のベンチ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bench by the stop"
+          }
+        }
+      }
+    },
+    "パラボラ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dish"
+          }
+        }
+      }
+    },
+    "パン屋の屋根に太陽の板": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar panels for the bakery"
+          }
+        }
+      }
+    },
+    "ブルガリアン": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulgarian split"
+          }
+        }
+      }
+    },
+    "ブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "blocks"
+          }
+        }
+      }
+    },
+    "ブロック　いま %d 階": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "blocks · now %d floors"
+          }
+        }
+      }
+    },
+    "プラネタリウムの屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A planetarium roof"
+          }
+        }
+      }
+    },
+    "ヘリが降りられる屋上": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A roof a helicopter can land on"
+          }
+        }
+      }
+    },
+    "ヘリポート": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helipad"
+          }
+        }
+      }
+    },
+    "ベンチのある屋上": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rooftop with a bench"
+          }
+        }
+      }
+    },
+    "ホテルの給水塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A hotel water tower"
+          }
+        }
+      }
+    },
+    "マンション": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apartments"
+          }
+        }
+      }
+    },
+    "モスクのような丸屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tall round cupola"
+          }
+        }
+      }
+    },
+    "ヨットクラブの旗": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yacht club pennants"
+          }
+        }
+      }
+    },
+    "ラジオ局の鉄塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A radio mast"
+          }
+        }
+      }
+    },
+    "ランジ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lunge"
+          }
+        }
+      }
+    },
+    "ワイド": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide squat"
+          }
+        }
+      }
+    },
+    "ワイド＝倉庫、ブルガリアン＝塔、ジャンプ＝灯台、ランジ＝時計塔。効く所を選べます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide = warehouse, Bulgarian = tower, Jump = lighthouse, Lunge = clock tower. Pick what you train"
+          }
+        }
+      }
+    },
+    "一歩前に出て腰を落とし、戻る。左右交互に": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step forward, drop the hips, return. Alternate"
+          }
+        }
+      }
+    },
+    "丘の上の三枚羽根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three blades on the hill"
+          }
+        }
+      }
+    },
+    "丘の上の風見どり": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A weathercock on the hill"
+          }
+        }
+      }
+    },
+    "並木": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A row of trees"
+          }
+        }
+      }
+    },
+    "中央駅": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Central station"
+          }
+        }
+      }
+    },
+    "丸屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dome"
+          }
+        }
+      }
+    },
+    "今日のやり方": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's move"
+          }
+        }
+      }
+    },
+    "今日のビル": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's building"
+          }
+        }
+      }
+    },
+    "今日のビル %d 階": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's building: %d floors"
+          }
+        }
+      }
+    },
+    "今日のブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocks today"
+          }
+        }
+      }
+    },
+    "今日の回数が今日のビルの高さに。1 か月で、あなたの通りのスカイラインができます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's reps set today's height. In a month, your street has a skyline"
+          }
+        }
+      }
+    },
+    "今日の注文": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's commission"
+          }
+        }
+      }
+    },
+    "今日の注文の進み具合": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commission progress"
+          }
+        }
+      }
+    },
+    "今日の注文を済ませました。屋上に「%@」": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commission complete. A %@ on the roof"
+          }
+        }
+      }
+    },
+    "今日は %d 回。次の目標を %d 回にしますか": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You did %d today. Set the next goal to %d?"
+          }
+        }
+      }
+    },
+    "今日はここまで": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done for today"
+          }
+        }
+      }
+    },
+    "今月": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month"
+          }
+        }
+      }
+    },
+    "今月のスカイライン": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month's skyline"
+          }
+        }
+      }
+    },
+    "今月の街": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month's city"
+          }
+        }
+      }
+    },
+    "今月の街。%d 棟、%d ブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month's city: %d buildings, %d blocks"
+          }
+        }
+      }
+    },
+    "今月の街を共有": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share this month's city"
+          }
+        }
+      }
+    },
+    "使い方をもう一度見る": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the intro again"
+          }
+        }
+      }
+    },
+    "保った秒が土台になり、その日のビルの敷地が広がります（30 秒で 1 マス）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seconds you hold become the foundation and widen today's lot (1 cell per 30 sec)"
+          }
+        }
+      }
+    },
+    "保育園の屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The nursery school roof"
+          }
+        }
+      }
+    },
+    "倉庫": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warehouse"
+          }
+        }
+      }
+    },
+    "先月も、去年の夏も。月ごとのスカイラインを見返せます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last month, last summer: revisit every skyline"
+          }
+        }
+      }
+    },
+    "光の並木": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avenue of lights"
+          }
+        }
+      }
+    },
+    "内もも": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inner thighs"
+          }
+        }
+      }
+    },
+    "判定のゆるさ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detection"
+          }
+        }
+      }
+    },
+    "動きのデータは回数を数えるためだけに、この iPhone の中で使います。外には送りません。ログインも広告もありません": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motion data is only used on this iPhone to count reps. Nothing is sent anywhere. No login, no ads"
+          }
+        }
+      }
+    },
+    "動きはこの iPhone の中で数えるためだけに使い、外に送りません": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motion is only used on this iPhone to count. Nothing leaves the device"
+          }
+        }
+      }
+    },
+    "合わせて %d 回": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d reps in total"
+          }
+        }
+      }
+    },
+    "吊り橋": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A suspension bridge"
+          }
+        }
+      }
+    },
+    "同じ街が、窓に明かりの点く夜景や雪景色に": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your city with lit windows at night, or under snow"
+          }
+        }
+      }
+    },
+    "商店街ののぼり": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shopping-street banners"
+          }
+        }
+      }
+    },
+    "噴水のある大広場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A grand fountain square"
+          }
+        }
+      }
+    },
+    "回数は自分で決めます。エンドレスもあります": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You choose the reps. There's an endless mode too"
+          }
+        }
+      }
+    },
+    "回（自分で決める）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "reps — your call"
+          }
+        }
+      }
+    },
+    "図書館の屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The library roof"
+          }
+        }
+      }
+    },
+    "土台": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foundation"
+          }
+        }
+      }
+    },
+    "土台の秒": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "foundation sec"
+          }
+        }
+      }
+    },
+    "土台をつくります": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Building the foundation"
+          }
+        }
+      }
+    },
+    "土台をつくる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lay the foundation"
+          }
+        }
+      }
+    },
+    "塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tower"
+          }
+        }
+      }
+    },
+    "声で数える（小さめ）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count out loud (quietly)"
+          }
+        }
+      }
+    },
+    "夕方": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dusk"
+          }
+        }
+      }
+    },
+    "夕日の見えるベンチ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sunset bench"
+          }
+        }
+      }
+    },
+    "夜景": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Night"
+          }
+        }
+      }
+    },
+    "夜景と雪の街": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Night and snow cities"
+          }
+        }
+      }
+    },
+    "夜行バスの乗り場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A night-bus stop"
+          }
+        }
+      }
+    },
+    "大観覧車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The big wheel"
+          }
+        }
+      }
+    },
+    "天文台の丸屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An observatory dome"
+          }
+        }
+      }
+    },
+    "天文台の塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An observatory tower"
+          }
+        }
+      }
+    },
+    "天気を読むレーダー": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A weather radar"
+          }
+        }
+      }
+    },
+    "太ももが床と平行に近い所で止まる。秒が土台の広さになる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold with thighs near level. Seconds widen your lot"
+          }
+        }
+      }
+    },
+    "太もも・お尻": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thighs & glutes"
+          }
+        }
+      }
+    },
+    "太もも前・体幹": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quads & core"
+          }
+        }
+      }
+    },
+    "太もも裏・バランス": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hamstrings & balance"
+          }
+        }
+      }
+    },
+    "太陽の板": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar panels"
+          }
+        }
+      }
+    },
+    "太陽の板をまっすぐ並べる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Line up the solar panels straight"
+          }
+        }
+      }
+    },
+    "学校のチャイム": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A school chime"
+          }
+        }
+      }
+    },
+    "家族で共有できます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Family Sharing supported"
+          }
+        }
+      }
+    },
+    "小さな公園": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A pocket park"
+          }
+        }
+      }
+    },
+    "小さな観覧車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A little Ferris wheel"
+          }
+        }
+      }
+    },
+    "屋上に小さな庭を": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A small garden on the roof"
+          }
+        }
+      }
+    },
+    "屋上のテニスコート": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rooftop tennis court"
+          }
+        }
+      }
+    },
+    "屋上のバラ園": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rooftop rose garden"
+          }
+        }
+      }
+    },
+    "屋上の小さな畑": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tiny rooftop farm"
+          }
+        }
+      }
+    },
+    "屋上の展望台": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rooftop lookout"
+          }
+        }
+      }
+    },
+    "屋上の庭": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roof garden"
+          }
+        }
+      }
+    },
+    "屋上の映画館": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rooftop cinema"
+          }
+        }
+      }
+    },
+    "山の上の中継局": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A relay on the ridge"
+          }
+        }
+      }
+    },
+    "川の小さな橋": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A small river bridge"
+          }
+        }
+      }
+    },
+    "市場の始まりの鐘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The market's opening bell"
+          }
+        }
+      }
+    },
+    "広場の噴水": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A plaza fountain"
+          }
+        }
+      }
+    },
+    "建てた日": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days built"
+          }
+        }
+      }
+    },
+    "建てた月": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Past months"
+          }
+        }
+      }
+    },
+    "建てはじめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start building"
+          }
+        }
+      }
+    },
+    "後ろの足を椅子に乗せ、前の脚でしゃがむ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rear foot on a chair, squat on the front leg"
+          }
+        }
+      }
+    },
+    "承認を待っています": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for approval"
+          }
+        }
+      }
+    },
+    "持ち方": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to hold"
+          }
+        }
+      }
+    },
+    "振動": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptics"
+          }
+        }
+      }
+    },
+    "救急ヘリの発着場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An air-ambulance pad"
+          }
+        }
+      }
+    },
+    "教会の小さな鐘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A small chapel bell"
+          }
+        }
+      }
+    },
+    "数えにくいときは「ゆるめ」に。深くしゃがんでも、行き過ぎで弾くことはありません。数え漏れは建てる画面の ＋1 で足せます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If reps are missed, pick Easy. Going deeper never fails a rep. You can always add a missed one with +1"
+          }
+        }
+      }
+    },
+    "数え方": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Counting"
+          }
+        }
+      }
+    },
+    "数え漏れたら、画面の ＋1 で足せます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missed one? Add it with +1"
+          }
+        }
+      }
+    },
+    "数え漏れを ＋1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missed one? +1"
+          }
+        }
+      }
+    },
+    "旗": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flag"
+          }
+        }
+      }
+    },
+    "日本語": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English"
+          }
+        }
+      }
+    },
+    "星空の観覧車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A starlit wheel"
+          }
+        }
+      }
+    },
+    "昼": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day"
+          }
+        }
+      }
+    },
+    "時計で数える": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start timer"
+          }
+        }
+      }
+    },
+    "時計台の鐘を吊る梁": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A beam to hang the clock bell"
+          }
+        }
+      }
+    },
+    "時計塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clock tower"
+          }
+        }
+      }
+    },
+    "最初の街路樹": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The first street tree"
+          }
+        }
+      }
+    },
+    "月のタイムラプス": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Month timelapse"
+          }
+        }
+      }
+    },
+    "朝を知らせる鐘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bell to ring in the morning"
+          }
+        }
+      }
+    },
+    "桜並木": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cherry-lined street"
+          }
+        }
+      }
+    },
+    "棟": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "buildings"
+          }
+        }
+      }
+    },
+    "森の公園": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A forest park"
+          }
+        }
+      }
+    },
+    "植物園": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Botanical gardens"
+          }
+        }
+      }
+    },
+    "植物園の温室": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A botanical glasshouse"
+          }
+        }
+      }
+    },
+    "標準": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "次に置かれる物：%@（あと %d ブロック）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next to appear: %@ (%d blocks to go)"
+          }
+        }
+      }
+    },
+    "次に街に置かれる物：%@（あと %d ブロック）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next landmark: %@ (%d blocks to go)"
+          }
+        }
+      }
+    },
+    "止める": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
+          }
+        }
+      }
+    },
+    "歩道橋": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A footbridge"
+          }
+        }
+      }
+    },
+    "水遊びの広場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A splash plaza"
+          }
+        }
+      }
+    },
+    "海辺の観覧車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A seaside wheel"
+          }
+        }
+      }
+    },
+    "消防の水槽": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A fire-brigade tank"
+          }
+        }
+      }
+    },
+    "深い宇宙の受信機": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A deep-space receiver"
+          }
+        }
+      }
+    },
+    "済み": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "港の信号旗": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harbor signal flags"
+          }
+        }
+      }
+    },
+    "港の灯り": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harbor lights"
+          }
+        }
+      }
+    },
+    "港の霧笛の鐘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A harbor fog bell"
+          }
+        }
+      }
+    },
+    "湾をまたぐ橋": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bridge across the bay"
+          }
+        }
+      }
+    },
+    "灯台": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lighthouse"
+          }
+        }
+      }
+    },
+    "灯台の風向計": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lighthouse wind gauge"
+          }
+        }
+      }
+    },
+    "灯台守の無線": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lighthouse keeper's radio"
+          }
+        }
+      }
+    },
+    "町内会の旗": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The neighborhood flag"
+          }
+        }
+      }
+    },
+    "画像で共有": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share as image"
+          }
+        }
+      }
+    },
+    "画像はこの iPhone の中で作ります。送り先は自分で選びます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The image is made on this iPhone. You choose where it goes"
+          }
+        }
+      }
+    },
+    "痛みがあるときは休んでください。ひざがつま先より前に出すぎないように": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rest if anything hurts. Keep your knees from drifting far past your toes"
+          }
+        }
+      }
+    },
+    "発電の風車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A power windmill"
+          }
+        }
+      }
+    },
+    "百年の大木": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A hundred-year tree"
+          }
+        }
+      }
+    },
+    "目標 %d": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goal %d"
+          }
+        }
+      }
+    },
+    "目標の高さに届きました。続けても、ここで終えても": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You reached your goal height. Keep going, or call it a day"
+          }
+        }
+      }
+    },
+    "科学館の丸屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A science museum dome"
+          }
+        }
+      }
+    },
+    "秒　→ 敷地 %d マス": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sec → lot of %d cells"
+          }
+        }
+      }
+    },
+    "秒の土台": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sec of foundation"
+          }
+        }
+      }
+    },
+    "空中庭園の広場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sky-garden plaza"
+          }
+        }
+      }
+    },
+    "空気椅子": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wall-less sit"
+          }
+        }
+      }
+    },
+    "空気椅子 %d 秒": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold a sit for %d sec"
+          }
+        }
+      }
+    },
+    "空港の管制アンテナ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An airport control mast"
+          }
+        }
+      }
+    },
+    "空港バスの乗り場": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Airport shuttle stop"
+          }
+        }
+      }
+    },
+    "立った姿勢から、どれだけ傾いたかで数えます。判定はゆるめ。深くしゃがんでも弾きません": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps are counted from how far you tilt from standing. Detection is easy-going; going deeper never fails"
+          }
+        }
+      }
+    },
+    "給水塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Water tank"
+          }
+        }
+      }
+    },
+    "給水塔の重さに耐える土台": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A base strong enough for a water tank"
+          }
+        }
+      }
+    },
+    "続けた日": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day streak"
+          }
+        }
+      }
+    },
+    "聖堂の大きな丸屋根": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A grand cathedral dome"
+          }
+        }
+      }
+    },
+    "胸に当てるか、\n前のポケットへ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold it to your chest,\nor slip it in a front pocket"
+          }
+        }
+      }
+    },
+    "芝生の丘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A grassy knoll"
+          }
+        }
+      }
+    },
+    "街に「%@」が置かれました": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ appeared in your city"
+          }
+        }
+      }
+    },
+    "街に戻る": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the city"
+          }
+        }
+      }
+    },
+    "街に置かれた物 %d / %d": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Landmarks %d / %d"
+          }
+        }
+      }
+    },
+    "街のシンボルタワー": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The city's landmark tower"
+          }
+        }
+      }
+    },
+    "街の見た目": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "City look"
+          }
+        }
+      }
+    },
+    "街の記録": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "City records"
+          }
+        }
+      }
+    },
+    "街を、もっと自分のものに": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make the city truly yours"
+          }
+        }
+      }
+    },
+    "街をつくりはじめる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start my city"
+          }
+        }
+      }
+    },
+    "街灯": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A street lamp"
+          }
+        }
+      }
+    },
+    "衛星を追うアンテナ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A satellite tracker"
+          }
+        }
+      }
+    },
+    "見晴らしの塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lookout tower"
+          }
+        }
+      }
+    },
+    "見本の街": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sample city"
+          }
+        }
+      }
+    },
+    "見本：1 日 1 棟、1 回が 1 ブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sample: one building a day, one block a rep"
+          }
+        }
+      }
+    },
+    "設定": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "読み込み中…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        }
+      }
+    },
+    "読書のベンチ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A reading bench"
+          }
+        }
+      }
+    },
+    "購入できませんでした。時間をおいてもう一度": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase failed. Please try again later"
+          }
+        }
+      }
+    },
+    "購入を復元": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchase"
+          }
+        }
+      }
+    },
+    "足は肩幅。2 秒かけて下ろし、1 秒で立つ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feet shoulder-width. Lower for 2 sec, stand in 1"
+          }
+        }
+      }
+    },
+    "足を大きく開き、つま先は外。ひざもつま先の向きへ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wide stance, toes out, knees follow toes"
+          }
+        }
+      }
+    },
+    "路面電車の停留所": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tram stop"
+          }
+        }
+      }
+    },
+    "通信のよい所で開き直すと、値段が出ます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reopen with a connection to see the price"
+          }
+        }
+      }
+    },
+    "通算ブロック": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "total blocks"
+          }
+        }
+      }
+    },
+    "速いとぐらぐらのブロックになり、ビルが少し傾きます。空気椅子の秒は土台になり、敷地が広がります": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rush it and blocks wobble, tilting the building. Holding a low sit lays a foundation and widens the lot"
+          }
+        }
+      }
+    },
+    "運動会の万国旗": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sports-day bunting"
+          }
+        }
+      }
+    },
+    "過去の月の街": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every past month"
+          }
+        }
+      }
+    },
+    "過去の月は Pro で見返せます": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Past months come with Pro"
+          }
+        }
+      }
+    },
+    "遠くの星を聞くパラボラ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A dish to listen to far stars"
+          }
+        }
+      }
+    },
+    "酒蔵の水の塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A brewery water tower"
+          }
+        }
+      }
+    },
+    "銀杏の並木": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ginkgo avenue"
+          }
+        }
+      }
+    },
+    "銭湯の給水塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bathhouse water tower"
+          }
+        }
+      }
+    },
+    "鐘": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bell"
+          }
+        }
+      }
+    },
+    "閉じる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "開店の旗を立てる": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raise the opening-day flag"
+          }
+        }
+      }
+    },
+    "雨水をためる樽": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A barrel for rainwater"
+          }
+        }
+      }
+    },
+    "雪": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snow"
+          }
+        }
+      }
+    },
+    "電波の届くアンテナを": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An antenna that reaches far"
+          }
+        }
+      }
+    },
+    "電波塔": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A broadcast tower"
+          }
+        }
+      }
+    },
+    "電波望遠鏡": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A radio telescope"
+          }
+        }
+      }
+    },
+    "音と振動": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound & haptics"
+          }
+        }
+      }
+    },
+    "音楽の噴水": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A musical fountain"
+          }
+        }
+      }
+    },
+    "頑丈": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solid"
+          }
+        }
+      }
+    },
+    "頑丈 %d、ふつう %d、ぐらぐら %d": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solid %d, plain %d, wobbly %d"
+          }
+        }
+      }
+    },
+    "頑丈なブロック %d 個（2 秒かけて下ろす）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d solid blocks (lower for 2 sec)"
+          }
+        }
+      }
+    },
+    "頑丈なブロック（%.1f 秒で下ろした）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solid block (lowered in %.1f sec)"
+          }
+        }
+      }
+    },
+    "風で回る看板": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A wind-spun sign"
+          }
+        }
+      }
+    },
+    "風向きを見る風車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A vane to read the wind"
+          }
+        }
+      }
+    },
+    "風車": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wind vane"
+          }
+        }
+      }
+    },
+    "駅の屋根に太陽の板": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solar panels on the station"
+          }
+        }
+      }
+    },
+    "駅舎": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A station house"
+          }
+        }
+      }
+    },
+    "高架の駅": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An elevated station"
           }
         }
       }
