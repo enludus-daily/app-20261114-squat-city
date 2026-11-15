@@ -13,7 +13,7 @@ struct ShareView: View {
                 VStack(spacing: 16) {
                     ShareCard(model: model, revealDays: reveal)
                         .frame(width: 320, height: 480)
-                        .shadow(color: Theme.ink.opacity(0.08), radius: 12, y: 5)
+                        .shadow(color: .black.opacity(0.5), radius: 16, y: 8)
                         .padding(.top, 8)
                     if let image = renderImage() {
                         ShareLink(item: image, preview: SharePreview(tr("今月の街", "This month's city"), image: image)) {
@@ -82,15 +82,15 @@ struct ShareCard: View {
         let builds = model.monthBuilds
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Eyebrow(text: model.monthTitle)
+                Eyebrow(text: model.monthTitle, color: Theme.accent)
                 Spacer()
-                Text(tr("しゃがんで建てる", "Squat City")).font(Theme.serif(12)).foregroundStyle(Theme.sub)
+                Text(tr("しゃがんで建てる", "Squat City")).font(Theme.display(12)).foregroundStyle(Theme.sub)
             }
             Text(tr("今月のスカイライン", "This month's skyline"))
-                .font(Theme.serif(26)).kerning(-0.6).foregroundStyle(Theme.ink)
+                .font(Theme.display(26)).foregroundStyle(Theme.ink)
             SkylineView(builds: builds, todayIndex: nil, theme: model.theme, landmarks: model.cityForDisplay.landmarks, revealDays: revealDays)
                 .clipShape(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+                .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: 2))
             HStack(spacing: 0) {
                 cell(builds.reduce(0) { $0 + $1.height }, tr("ブロック", "blocks"))
                 cell(builds.filter { !$0.isEmpty }.count, tr("棟", "buildings"))
@@ -101,19 +101,17 @@ struct ShareCard: View {
             }
         }
         .padding(20)
+        .padding(.top, 8)
         .background(Theme.card)
-        .overlay(alignment: .topTrailing) {
-            // テープ（飾りは 1 枚だけ）
-            Rectangle().fill(Theme.tape.opacity(0.85)).frame(width: 64, height: 16).rotationEffect(.degrees(6)).offset(x: -18, y: -6)
-                .accessibilityHidden(true)
-        }
+        .overlay(alignment: .top) { HazardStripe(stripe: 8).frame(height: 10) }
+        .overlay { Bolts() }
         .clipShape(RoundedRectangle(cornerRadius: Theme.radiusL, style: .continuous))
     }
 
     private func cell(_ n: Int, _ label: String) -> some View {
         VStack(spacing: 0) {
-            Text("\(n)").font(Theme.serif(26)).kerning(-1.2).monospacedDigit().foregroundStyle(Theme.ink)
-            Text(label).font(.system(size: 10.5)).foregroundStyle(Theme.sub)
+            Text("\(n)").font(Theme.number(30)).foregroundStyle(Theme.accent)
+            Text(label).font(.system(size: 10.5, weight: .semibold)).foregroundStyle(Theme.sub)
         }
         .frame(maxWidth: .infinity)
     }
@@ -148,24 +146,25 @@ struct MovesView: View {
 
     private func row(_ m: Move) -> some View {
         HStack(spacing: 14) {
-            BuildingView(build: Self.preview(m), theme: .day, minFloors: 4)
+            BuildingView(build: Self.preview(m), theme: .dusk, minFloors: 4, crane: false)
                 .frame(width: 58, height: 74)
-                .background(Theme.skyTop.opacity(0.5), in: RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous))
+                .background(LinearGradient(gradient: CityPalette.of(.dusk).sky, startPoint: .top, endPoint: .bottom), in: RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous))
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 6) {
-                    Text(m.name).font(Theme.serif(17)).foregroundStyle(Theme.ink)
+                    Text(m.name).font(Theme.display(17)).foregroundStyle(Theme.ink)
                     Text("→ " + m.building).font(.system(size: 12)).foregroundStyle(Theme.sub)
                     if m.isPro && !model.isPro { Image(systemName: "lock").font(.system(size: 10)).foregroundStyle(Theme.sub) }
                 }
-                Text(m.target).font(.system(size: 12, weight: .medium)).foregroundStyle(Theme.deep)
+                Text(m.target).font(.system(size: 12, weight: .bold)).foregroundStyle(Theme.deep)
                 Text(m.howTo).font(.system(size: 12)).foregroundStyle(Theme.sub).lineLimit(2)
             }
             Spacer(minLength: 0)
-            if model.move == m { Image(systemName: "checkmark").foregroundStyle(Theme.deep) }
+            if model.move == m { Image(systemName: "checkmark.square.fill").font(.system(size: 20)).foregroundStyle(Theme.accent) }
         }
         .padding(12)
-        .background(model.move == m ? Theme.soft.opacity(0.7) : Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+        .background(model.move == m ? Theme.soft : Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(model.move == m ? Theme.accent : Theme.line, lineWidth: model.move == m ? 1.5 : Theme.hairline))
     }
 
     static func preview(_ m: Move) -> DayBuild {
@@ -187,7 +186,7 @@ struct TownView: View {
                         cell(model.ledger.builtDays, tr("建てた日", "days built"))
                         cell(model.ledger.totalFoundation, tr("土台の秒", "foundation sec"))
                     }
-                    Eyebrow(text: trf("街に置かれた物 %d / %d", "Landmarks %d / %d", model.ledger.landmarks.count, Landmark.catalog.count))
+                    Eyebrow(text: trf("街に置かれた物 %d / %d", "Landmarks %d / %d", model.ledger.landmarks.count, Landmark.catalog.count), color: Theme.accent)
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 96), spacing: 10)], spacing: 10) {
                         ForEach(Landmark.catalog) { mark in
                             let got = mark.threshold <= model.ledger.totalBlocks
@@ -202,11 +201,12 @@ struct TownView: View {
                             }
                             .frame(maxWidth: .infinity, minHeight: 104)
                             .padding(6)
-                            .overlay(RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+                            .background(got ? Theme.card : Theme.hazardBlack.opacity(0.5), in: RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous))
+                            .overlay(RoundedRectangle(cornerRadius: Theme.radiusS, style: .continuous).stroke(got ? Theme.accent.opacity(0.5) : Theme.line, style: got ? StrokeStyle(lineWidth: 1) : StrokeStyle(lineWidth: 1, dash: [4, 3])))
                             .accessibilityElement(children: .combine)
                         }
                     }
-                    Eyebrow(text: tr("建てた月", "Past months"))
+                    Eyebrow(text: tr("建てた月", "Past months"), color: Theme.accent)
                     let months = model.ledger.months(calendar: model.calendar)
                     if months.isEmpty {
                         Text(tr("まだ建てた月はありません。最初の 1 回で、今月の 1 棟目が建ちます", "No months yet. Your first rep raises this month's first building"))
@@ -233,7 +233,7 @@ struct TownView: View {
         let locked = !isCurrent && !model.isPro
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(Self.title(start)).font(Theme.serif(15)).foregroundStyle(Theme.ink)
+                Text(Self.title(start)).font(Theme.display(15)).foregroundStyle(Theme.ink)
                 Spacer()
                 if locked { Label("Pro", systemImage: "lock").font(.system(size: 11)).foregroundStyle(Theme.sub) }
             }
@@ -254,8 +254,8 @@ struct TownView: View {
 
     private func cell(_ n: Int, _ label: String) -> some View {
         VStack(spacing: 0) {
-            Text("\(n)").font(Theme.serif(26)).kerning(-1.2).monospacedDigit().foregroundStyle(Theme.ink)
-            Text(label).font(.system(size: 10.5)).foregroundStyle(Theme.sub)
+            Text("\(n)").font(Theme.number(30)).foregroundStyle(Theme.accent)
+            Text(label).font(.system(size: 10.5, weight: .semibold)).foregroundStyle(Theme.sub)
         }
         .frame(maxWidth: .infinity)
     }

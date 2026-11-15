@@ -10,7 +10,7 @@ struct ResultView: View {
     var body: some View {
         ZStack {
             Theme.paper.ignoresSafeArea()
-            Blueprint().ignoresSafeArea().opacity(0.6)
+            SiteBackdrop().ignoresSafeArea()
             if let r = model.result {
                 if sizeClass == .regular {
                     HStack(spacing: 32) {
@@ -55,13 +55,13 @@ struct ResultView: View {
     private func details(_ r: SessionResult) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             VStack(alignment: .leading, spacing: 2) {
-                Eyebrow(text: tr("今日のビル", "Today's building"))
+                Eyebrow(text: tr("今日のビル", "Today's building"), color: Theme.accent)
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     if r.move.isHold {
-                        Text("+\(r.foundationSeconds)").font(Theme.serif(52)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
+                        Text("+\(r.foundationSeconds)").font(Theme.number(64)).foregroundStyle(Theme.accent)
                         Text(tr("秒の土台", "sec of foundation")).font(.system(size: 14)).foregroundStyle(Theme.sub)
                     } else {
-                        Text("+\(r.blocks)").font(Theme.serif(52)).kerning(-3).monospacedDigit().foregroundStyle(Theme.ink)
+                        Text("+\(r.blocks)").font(Theme.number(64)).foregroundStyle(Theme.accent)
                         Text(trf("ブロック　いま %d 階", "blocks · now %d floors", r.buildHeight)).font(.system(size: 14)).foregroundStyle(Theme.sub)
                     }
                 }
@@ -75,9 +75,9 @@ struct ResultView: View {
                     .font(.system(size: 13)).foregroundStyle(Theme.deep)
             }
             if r.commissionDone, let o = r.ornament {
-                Plate {
+                Plate(stripe: true) {
                     HStack(spacing: 10) {
-                        Image(systemName: "seal").foregroundStyle(Theme.deep)
+                        Image(systemName: "checkmark.seal.fill").foregroundStyle(Theme.accent)
                         Text(trf("今日の注文を済ませました。屋上に「%@」", "Commission complete: %@ added to the roof", o.name))
                             .font(.system(size: 14)).foregroundStyle(Theme.ink)
                     }
@@ -86,7 +86,7 @@ struct ResultView: View {
             ForEach(r.newLandmarks, id: \.self) { name in
                 Plate {
                     HStack(spacing: 10) {
-                        Image(systemName: "sparkle").foregroundStyle(Theme.deep)
+                        Image(systemName: "sparkle").foregroundStyle(Theme.window)
                         Text(trf("街に「%@」が置かれました", "%@ appeared in your city", name)).font(.system(size: 14)).foregroundStyle(Theme.ink)
                     }
                 }
@@ -127,7 +127,7 @@ struct QualityBars: View {
                     segment(.wobbly, width: geo.size.width * CGFloat(wobbly) / CGFloat(total))
                 }
             }
-            .frame(height: 14)
+            .frame(height: 16)
             HStack(spacing: 14) {
                 legend(.sturdy, sturdy)
                 legend(.normal, normal)
@@ -141,10 +141,10 @@ struct QualityBars: View {
     @ViewBuilder
     private func segment(_ q: BlockQuality, width: CGFloat) -> some View {
         if width > 0 {
-            RoundedRectangle(cornerRadius: 3, style: .continuous)
-                .fill(q.fill)
-                .overlay(RoundedRectangle(cornerRadius: 3, style: .continuous)
-                    .stroke(q.stroke, style: q == .wobbly ? StrokeStyle(lineWidth: 1, dash: [2.5, 2]) : StrokeStyle(lineWidth: q == .sturdy ? 1.3 : 1)))
+            RoundedRectangle(cornerRadius: 2, style: .continuous)
+                .fill(q == .wobbly ? Theme.card : q.stroke.opacity(q == .sturdy ? 1 : 0.55))
+                .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous)
+                    .stroke(q.stroke, style: q == .wobbly ? StrokeStyle(lineWidth: 1.2, dash: [3, 2]) : StrokeStyle(lineWidth: 1)))
                 .frame(width: max(4, width - 2))
         }
     }
@@ -152,7 +152,7 @@ struct QualityBars: View {
     private func legend(_ q: BlockQuality, _ n: Int) -> some View {
         HStack(spacing: 4) {
             Text(q.name).font(.system(size: 12)).foregroundStyle(Theme.sub)
-            Text("\(n)").font(Theme.serif(15)).monospacedDigit().foregroundStyle(Theme.ink)
+            Text("\(n)").font(Theme.number(17)).foregroundStyle(q.stroke)
         }
     }
 }

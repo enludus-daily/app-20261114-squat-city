@@ -10,11 +10,11 @@ struct OnboardingView: View {
     var body: some View {
         ZStack {
             Theme.paper.ignoresSafeArea()
-            Blueprint().ignoresSafeArea().opacity(0.7)
+            SiteBackdrop().ignoresSafeArea()
             VStack(alignment: .leading, spacing: 18) {
                 HStack(spacing: 6) {
                     ForEach(0..<3) { i in
-                        Capsule().fill(i <= page ? Theme.deep : Theme.line).frame(width: i == page ? 22 : 8, height: 4)
+                        RoundedRectangle(cornerRadius: 1).fill(i <= page ? Theme.accent : Theme.line).frame(width: i == page ? 28 : 10, height: 5)
                     }
                 }
                 .padding(.top, 12)
@@ -60,9 +60,9 @@ struct OnboardingView: View {
 
     private var pageOne: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Eyebrow(text: tr("しゃがんで建てる", "Squat City"))
+            Eyebrow(text: tr("しゃがんで建てる", "Squat City"), color: Theme.accent)
             Text(tr("しゃがんで立つ 1 回が、\nビルの 1 ブロックになる", "One squat,\none block of your building"))
-                .font(Theme.serif(30)).kerning(-0.8).foregroundStyle(Theme.ink)
+                .font(Theme.display(30)).foregroundStyle(Theme.ink)
             BuildingView(build: DayBuild(day: "2026-01-01", blocks: (0..<demoBlocks).map { Block(quality: $0 % 4 == 2 ? .normal : .sturdy, move: .squat) }), goal: 10)
                 .frame(height: 280)
             Text(tr("今日の回数が今日のビルの高さに。1 か月で、あなたの通りのスカイラインができます", "Today's reps set today's height. In a month, your street has a skyline"))
@@ -72,9 +72,9 @@ struct OnboardingView: View {
 
     private var pageTwo: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Eyebrow(text: tr("ゆっくりが強い", "Slow is strong"))
+            Eyebrow(text: tr("ゆっくりが強い", "Slow is strong"), color: Theme.accent)
             Text(tr("2 秒かけて下ろすと、\n頑丈なブロック", "Lower for 2 seconds\nfor a solid block"))
-                .font(Theme.serif(30)).kerning(-0.8).foregroundStyle(Theme.ink)
+                .font(Theme.display(30)).foregroundStyle(Theme.ink)
             HStack(alignment: .bottom, spacing: 18) {
                 sample(.sturdy, tr("2 秒以上", "2 sec+"), lean: 0)
                 sample(.normal, tr("1〜2 秒", "1–2 sec"), lean: 0)
@@ -92,12 +92,13 @@ struct OnboardingView: View {
             VStack(spacing: 0) {
                 ForEach(0..<4) { _ in
                     RoundedRectangle(cornerRadius: 2).fill(q.fill)
+                        .overlay(RoundedRectangle(cornerRadius: 1).fill(Theme.window.opacity(q == .wobbly ? 0.25 : 0.8)).frame(width: 8, height: 10))
                         .overlay(RoundedRectangle(cornerRadius: 2).stroke(q.stroke, style: q == .wobbly ? StrokeStyle(lineWidth: 1.1, dash: [3, 2]) : StrokeStyle(lineWidth: q == .sturdy ? 1.5 : 1.1)))
                         .frame(width: 58, height: 26)
                 }
             }
             .rotationEffect(.degrees(lean), anchor: .bottom)
-            Text(q.name).font(Theme.serif(16)).foregroundStyle(Theme.ink)
+            Text(q.name).font(Theme.display(16)).foregroundStyle(q.stroke)
             Text(label).font(.system(size: 11)).foregroundStyle(Theme.sub)
         }
         .accessibilityElement(children: .combine)
@@ -105,9 +106,9 @@ struct OnboardingView: View {
 
     private var pageThree: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Eyebrow(text: tr("持ち方", "How to hold"))
+            Eyebrow(text: tr("持ち方", "How to hold"), color: Theme.accent)
             Text(tr("胸に当てるか、\n前のポケットへ", "Hold it to your chest,\nor slip it in a front pocket"))
-                .font(Theme.serif(30)).kerning(-0.8).foregroundStyle(Theme.ink)
+                .font(Theme.display(30)).foregroundStyle(Theme.ink)
             VStack(alignment: .leading, spacing: 12) {
                 tip("hand.raised", tr("立った姿勢から、どれだけ傾いたかで数えます。判定はゆるめ。深くしゃがんでも弾きません", "Reps are counted from how far you tilt from standing. Detection is easy-going; going deeper never fails"))
                 tip("plus.circle", tr("数え漏れたら、画面の ＋1 で足せます", "Missed one? Add it with +1"))
@@ -119,7 +120,7 @@ struct OnboardingView: View {
 
     private func tip(_ icon: String, _ text: String) -> some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: icon).foregroundStyle(Theme.deep).frame(width: 24)
+            Image(systemName: icon).font(.system(size: 15, weight: .bold)).foregroundStyle(Theme.hazardBlack).frame(width: 30, height: 30).background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.radiusS))
             Text(text).font(.system(size: 14)).foregroundStyle(Theme.ink)
         }
     }

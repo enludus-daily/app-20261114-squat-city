@@ -122,7 +122,7 @@ final class AppModel {
         sensitivity = Sensitivity(rawValue: d.string(forKey: "sensitivity") ?? "") ?? .easy
         voiceOn = persists ? (d.object(forKey: "voice") as? Bool ?? true) : true
         hapticsOn = d.object(forKey: "haptics") as? Bool ?? true
-        theme = persists ? (CityTheme(rawValue: d.string(forKey: "theme") ?? "") ?? .day) : .day
+        theme = persists ? (CityTheme(rawValue: d.string(forKey: "theme") ?? "") ?? .dusk) : .dusk
         goalCount = persists ? (d.object(forKey: "goalCount") as? Int ?? 15) : 15
         endless = persists ? d.bool(forKey: "endless") : false
         move = persists ? (Move(rawValue: d.string(forKey: "move") ?? "") ?? .squat) : .squat

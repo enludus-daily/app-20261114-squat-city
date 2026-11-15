@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Theme.paper.ignoresSafeArea()
-            Blueprint().ignoresSafeArea().opacity(0.6)
+            SiteBackdrop().ignoresSafeArea()
             // 見出しと「建てはじめる」は固定し、真ん中だけをスクロールする（主なボタンがスクロールの下に重ならない）
             VStack(spacing: 0) {
                 header
@@ -60,10 +60,12 @@ struct HomeView: View {
     private var header: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 2) {
-                Eyebrow(text: model.showsSample ? tr("見本の街", "Sample city") : model.monthTitle)
+                HStack(spacing: 8) {
+                    HazardStripe(stripe: 5).frame(width: 30, height: 8).clipShape(RoundedRectangle(cornerRadius: 1))
+                    Eyebrow(text: model.showsSample ? tr("見本の街", "Sample city") : model.monthTitle, color: Theme.accent)
+                }
                 Text(tr("しゃがんで建てる", "Squat City"))
-                    .font(Theme.serif(30))
-                    .kerning(-0.8)
+                    .font(Theme.display(32))
                     .foregroundStyle(Theme.ink)
             }
             Spacer()
@@ -88,15 +90,15 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 8) {
             SkylineView(builds: model.monthBuilds, todayIndex: model.todayIndex, theme: model.theme, landmarks: model.cityForDisplay.landmarks)
                 .frame(height: height)
-                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusL, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: Theme.radiusL, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
+                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: 2))
                 .overlay(alignment: .topLeading) {
                     if model.showsSample {
                         Text(tr("見本：1 日 1 棟、1 回が 1 ブロック", "Sample: one building a day, one block a rep"))
-                            .font(.system(size: 11, weight: .medium))
-                            .foregroundStyle(Theme.deep)
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(Theme.hazardBlack)
                             .padding(.horizontal, 10).padding(.vertical, 5)
-                            .background(Theme.card.opacity(0.9), in: Capsule())
+                            .background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.radiusS))
                             .padding(10)
                     }
                 }
@@ -110,10 +112,11 @@ struct HomeView: View {
                             Text(t.name)
                             if t.isPro && !model.isPro { Image(systemName: "lock").font(.system(size: 9)) }
                         }
-                        .font(.system(size: 12, weight: model.theme == t ? .semibold : .regular))
-                        .foregroundStyle(model.theme == t ? Theme.deep : Theme.sub)
+                        .font(.system(size: 12, weight: .heavy))
+                        .foregroundStyle(model.theme == t ? Theme.hazardBlack : Theme.sub)
                         .padding(.horizontal, 10).frame(height: 30)
-                        .background(model.theme == t ? Theme.soft : .clear, in: Capsule())
+                        .background(model.theme == t ? Theme.accent : Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusS))
+                        .overlay(RoundedRectangle(cornerRadius: Theme.radiusS).stroke(model.theme == t ? .clear : Theme.line, lineWidth: 1))
                     }
                     .buttonStyle(.plain)
                 }
@@ -131,8 +134,8 @@ struct HomeView: View {
             stat(value: model.streak, label: tr("続けた日", "Day streak"))
         }
         .padding(.vertical, 12)
-        .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: Theme.hairline) }
-        .overlay(alignment: .bottom) { Rectangle().fill(Theme.line).frame(height: Theme.hairline) }
+        .background(Theme.hazardBlack.opacity(0.6), in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
     }
 
     private var divider: some View { Rectangle().fill(Theme.line).frame(width: Theme.hairline, height: 34) }
@@ -140,12 +143,10 @@ struct HomeView: View {
     private func stat(value: Int, label: String) -> some View {
         VStack(spacing: 2) {
             Text("\(value)")
-                .font(Theme.serif(30))
-                .kerning(-1.5)
-                .monospacedDigit()
+                .font(Theme.number(36))
                 .contentTransition(.numericText())
-                .foregroundStyle(Theme.ink)
-            Text(label).font(.system(size: 11)).foregroundStyle(Theme.sub)
+                .foregroundStyle(Theme.accent)
+            Text(label).font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.sub)
         }
         .frame(maxWidth: .infinity)
         .accessibilityElement(children: .combine)
@@ -154,24 +155,24 @@ struct HomeView: View {
     private var commissionPlate: some View {
         let c = model.commission
         let progress = c.progress(model.today)
-        return Plate {
+        return Plate(stripe: true) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Eyebrow(text: tr("今日の注文", "Today's commission"))
+                    Eyebrow(text: tr("今日の注文", "Today's commission"), color: Theme.accent)
                     Spacer()
                     if progress >= 1 {
                         Label(tr("済み", "Done"), systemImage: "checkmark").font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.deep)
                     }
                 }
-                Text(c.title).font(Theme.serif(19)).foregroundStyle(Theme.ink)
+                Text(c.title).font(Theme.display(19)).foregroundStyle(Theme.ink)
                 Text(c.requirement).font(.system(size: 13)).foregroundStyle(Theme.sub)
                 GeometryReader { geo in
                     ZStack(alignment: .leading) {
-                        Capsule().fill(Theme.soft)
-                        Capsule().fill(Theme.accent).frame(width: max(6, geo.size.width * progress))
+                        RoundedRectangle(cornerRadius: 2).fill(Theme.hazardBlack)
+                        HazardStripe(stripe: 6).frame(width: max(6, geo.size.width * progress)).clipShape(RoundedRectangle(cornerRadius: 2))
                     }
                 }
-                .frame(height: 5)
+                .frame(height: 10)
                 Text(trf("ごほうび：屋上に「%@」", "Reward: %@ on today's roof", c.ornament.name))
                     .font(.system(size: 12)).foregroundStyle(Theme.deep)
             }
@@ -193,7 +194,7 @@ struct HomeView: View {
                     .accessibilityIdentifier("home.moves")
                 }
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    Text(model.move.name).font(Theme.serif(21)).foregroundStyle(Theme.ink)
+                    Text(model.move.name).font(Theme.display(21)).foregroundStyle(Theme.ink)
                     Text("→ " + model.move.building).font(.system(size: 13)).foregroundStyle(Theme.sub)
                 }
                 Text(model.move.howTo).font(.system(size: 12.5)).foregroundStyle(Theme.sub)
@@ -205,9 +206,9 @@ struct HomeView: View {
                         .accessibilityLabel(tr("1 回へらす", "One fewer"))
                         VStack(spacing: 0) {
                             Text(model.endless ? "∞" : "\(model.goalCount)")
-                                .font(Theme.serif(38)).kerning(-2).monospacedDigit()
+                                .font(Theme.number(44))
+                                .foregroundStyle(Theme.accent)
                                 .contentTransition(.numericText())
-                                .foregroundStyle(Theme.ink)
                             Text(model.endless ? tr("エンドレス", "Endless") : tr("回（自分で決める）", "reps — your call"))
                                 .font(.system(size: 11)).foregroundStyle(Theme.sub)
                         }
@@ -248,11 +249,12 @@ struct HomeView: View {
                         .font(.system(size: 12)).foregroundStyle(Theme.sub)
                 }
                 Spacer()
-                Image(systemName: "chevron.right").font(.system(size: 13)).foregroundStyle(Theme.sub)
+                Image(systemName: "chevron.right").font(.system(size: 13, weight: .bold)).foregroundStyle(Theme.accent)
             }
         }
         .buttonStyle(.plain)
         .padding(14)
+        .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
         .accessibilityIdentifier("home.town")
     }
@@ -261,7 +263,7 @@ struct HomeView: View {
         VStack(spacing: 6) {
             Button { model.startSession() } label: {
                 HStack(spacing: 8) {
-                    Image(systemName: model.move.isHold ? "square.stack.3d.down.right" : "building.2")
+                    Image(systemName: model.move.isHold ? "square.stack.3d.down.right" : "building.2.fill")
                     Text(model.move.isHold ? tr("土台をつくる", "Lay the foundation") : tr("建てはじめる", "Start building"))
                     if model.move.isPro && !model.isPro { Image(systemName: "lock") }
                 }

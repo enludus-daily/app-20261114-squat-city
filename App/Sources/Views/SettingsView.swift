@@ -89,17 +89,19 @@ struct PaywallView: View {
                             .accessibilityLabel(tr("閉じる", "Close"))
                             .accessibilityIdentifier("main.closePaywall")
                     }
-                    Eyebrow(text: headline)
+                    Eyebrow(text: headline, color: Theme.accent)
                     Text(tr("街を、もっと自分のものに", "Make the city truly yours"))
-                        .font(Theme.serif(28)).kerning(-0.6).foregroundStyle(Theme.ink)
+                        .font(Theme.display(28)).foregroundStyle(Theme.ink)
                     HStack(alignment: .bottom, spacing: 6) {
                         ForEach([Move.wide, .bulgarian, .jump, .lunge]) { m in
-                            BuildingView(build: MovesView.preview(m), theme: .dusk, minFloors: 4)
+                            BuildingView(build: MovesView.preview(m), theme: .dusk, minFloors: 4, crane: false)
                                 .frame(maxWidth: .infinity).frame(height: 96)
                         }
                     }
                     .padding(8)
-                    .background(Theme.soft.opacity(0.6), in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+                    .padding(.top, 6)
+                    .background(LinearGradient(gradient: CityPalette.of(.dusk).sky, startPoint: .top, endPoint: .bottom), in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+                    .overlay(alignment: .top) { HazardStripe(stripe: 7).frame(height: 6).clipShape(UnevenRoundedRectangle(topLeadingRadius: Theme.radiusM, topTrailingRadius: Theme.radiusM)) }
                     benefit("building.columns", tr("やり方 4 種と建物 4 種", "4 moves, 4 building styles"),
                             tr("ワイド＝倉庫、ブルガリアン＝塔、ジャンプ＝灯台、ランジ＝時計塔。効く所を選べます", "Wide = warehouse, Bulgarian = tower, Jump = lighthouse, Lunge = clock tower. Pick what you train"))
                     benefit("moon.stars", tr("夜景と雪の街", "Night and snow cities"),
@@ -132,9 +134,9 @@ struct PaywallView: View {
 
     private func benefit(_ icon: String, _ title: String, _ detail: String) -> some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: icon).font(.system(size: 17)).foregroundStyle(Theme.deep).frame(width: 26)
+            Image(systemName: icon).font(.system(size: 15, weight: .bold)).foregroundStyle(Theme.hazardBlack).frame(width: 30, height: 30).background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.radiusS))
             VStack(alignment: .leading, spacing: 2) {
-                Text(title).font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.ink)
+                Text(title).font(.system(size: 15, weight: .heavy)).foregroundStyle(Theme.ink)
                 Text(detail).font(.system(size: 12.5)).foregroundStyle(Theme.sub)
             }
         }

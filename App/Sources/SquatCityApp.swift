@@ -30,8 +30,8 @@ struct RootView: View {
         }
         .animation(.easeOut(duration: 0.35), value: model.onboarded)
         .environment(model)
-        // 淡い空と細い線の街が主役。夜景は街のテーマで選べるので、画面はライトに固定する（StudyReel と同じ）
-        .preferredColorScheme(.light)
+        // 夕暮れの工事現場が世界。地はアスファルトの暗い色なので、画面はダークに固定する（シートのフォームも暗く）
+        .preferredColorScheme(.dark)
         .fullScreenCover(item: $model.cover) { cover in
             Group {
                 switch cover {
@@ -40,12 +40,12 @@ struct RootView: View {
                 }
             }
             .environment(model)
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
         }
         .sheet(item: $model.activeSheet) { sheet in
             sheetView(sheet)
                 .environment(model)
-                .preferredColorScheme(.light)
+                .preferredColorScheme(.dark)
         }
         .sensoryFeedback(trigger: model.pressTick) { _, _ in model.hapticsOn ? .selection : nil }
         .sensoryFeedback(trigger: model.blockTick) { _, _ in model.hapticsOn ? .impact(weight: .light) : nil }

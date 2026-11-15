@@ -10,7 +10,7 @@ struct SessionView: View {
     var body: some View {
         ZStack {
             Theme.paper.ignoresSafeArea()
-            Blueprint().ignoresSafeArea().opacity(0.8)
+            SiteBackdrop().ignoresSafeArea()
             if let s = model.session {
                 if sizeClass == .regular {
                     HStack(spacing: 32) {
@@ -54,8 +54,8 @@ struct SessionView: View {
     private func topBar(_ s: Session) -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Eyebrow(text: s.move.name + " → " + s.move.building)
-                Text(model.commission.title).font(Theme.serif(15)).foregroundStyle(Theme.ink).lineLimit(1)
+                Eyebrow(text: s.move.name + " → " + s.move.building, color: Theme.accent)
+                Text(model.commission.title).font(Theme.display(15)).foregroundStyle(Theme.ink).lineLimit(1)
             }
             Spacer()
             CommissionRing(progress: model.commission.progress(model.today))
@@ -75,22 +75,22 @@ struct SessionView: View {
         if s.move.isHold {
             VStack(spacing: 2) {
                 Text(String(format: "%.0f", s.hold.seconds))
-                    .font(Theme.serif(76)).kerning(-4).monospacedDigit()
+                    .font(Theme.number(88))
                     .contentTransition(.numericText())
-                    .foregroundStyle(Theme.ink)
+                    .foregroundStyle(Theme.accent)
                 Text(trf("秒　→ 敷地 %d マス", "sec → lot of %d cells", min(5, 2 + (model.today.foundationSeconds + Int(s.hold.seconds)) / 30)))
                     .font(.system(size: 13)).foregroundStyle(Theme.sub)
             }
         } else {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(s.blocks.count)")
-                    .font(Theme.serif(76)).kerning(-4).monospacedDigit()
+                    .font(Theme.number(88))
                     .contentTransition(.numericText())
-                    .foregroundStyle(Theme.ink)
+                    .foregroundStyle(Theme.accent)
                 if let g = s.goalCount {
-                    Text("/ \(g)").font(Theme.serif(24)).foregroundStyle(Theme.sub)
+                    Text("/ \(g)").font(Theme.display(24)).foregroundStyle(Theme.sub)
                 } else {
-                    Text("∞").font(Theme.serif(24)).foregroundStyle(Theme.sub)
+                    Text("∞").font(Theme.display(24)).foregroundStyle(Theme.sub)
                 }
             }
             .accessibilityElement(children: .combine)
@@ -122,8 +122,8 @@ struct SessionView: View {
                          : tr("この端末では動きを読めません。1 回ごとに ＋1 を押してください", "This device can't read motion. Tap +1 after each rep"))
                 }
             }
-            .font(.system(size: 13))
-            .foregroundStyle(s.lastRep?.quality == .wobbly ? Theme.sub : Theme.deep)
+            .foregroundStyle(s.lastRep?.quality == .wobbly ? Theme.cone : Theme.deep)
+            .font(.system(size: 13, weight: .semibold))
             .multilineTextAlignment(.center)
             .frame(minHeight: 34)
         }
@@ -160,13 +160,21 @@ struct DepthGauge: View {
         GeometryReader { geo in
             let w = geo.size.width
             ZStack(alignment: .leading) {
-                Capsule().stroke(Theme.line, lineWidth: Theme.hairline).frame(height: 8)
-                Capsule().fill(ratio >= threshold ? Theme.deep.opacity(0.75) : Theme.accent)
-                    .frame(width: max(8, w * ratio), height: 8)
-                    .animation(.easeOut(duration: 0.12), value: ratio)
-                Rectangle().fill(Theme.deep).frame(width: 1, height: 16).offset(x: w * threshold)
-                Text(tr("しゃがむ", "low")).font(.system(size: 9, weight: .medium)).foregroundStyle(Theme.deep)
-                    .offset(x: w * threshold + 4, y: -11)
+                RoundedRectangle(cornerRadius: 2).fill(Theme.hazardBlack).frame(height: 10)
+                    .overlay(RoundedRectangle(cornerRadius: 2).stroke(Theme.line, lineWidth: 1))
+                Group {
+                    if ratio >= threshold {
+                        HazardStripe(stripe: 6)
+                    } else {
+                        Theme.amber
+                    }
+                }
+                .frame(width: max(8, w * ratio), height: 10)
+                .clipShape(RoundedRectangle(cornerRadius: 2))
+                .animation(.easeOut(duration: 0.12), value: ratio)
+                Rectangle().fill(Theme.accent).frame(width: 2, height: 18).offset(x: w * threshold)
+                Text(tr("しゃがむ", "LOW")).font(.system(size: 9, weight: .black).width(.condensed)).foregroundStyle(Theme.accent)
+                    .offset(x: w * threshold + 5, y: -12)
             }
             .frame(maxHeight: .infinity)
         }
@@ -180,9 +188,9 @@ struct CommissionRing: View {
     var progress: Double
     var body: some View {
         ZStack {
-            Circle().stroke(Theme.line, lineWidth: 2)
-            Circle().trim(from: 0, to: progress).stroke(Theme.deep, style: StrokeStyle(lineWidth: 2, lineCap: .round)).rotationEffect(.degrees(-90))
-            Text("\(Int(progress * 100))").font(.system(size: 10, weight: .medium)).monospacedDigit().foregroundStyle(Theme.deep)
+            Circle().stroke(Theme.line, lineWidth: 3)
+            Circle().trim(from: 0, to: progress).stroke(Theme.accent, style: StrokeStyle(lineWidth: 3, lineCap: .butt)).rotationEffect(.degrees(-90))
+            Text("\(Int(progress * 100))").font(.system(size: 11, weight: .black).width(.condensed)).monospacedDigit().foregroundStyle(Theme.accent)
         }
     }
 }

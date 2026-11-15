@@ -1,69 +1,66 @@
 import SwiftUI
 
 // 見た目の決まり（app-quality-bar の look.md）。色・書体・角丸・余白・影はここだけで決める。
-// トーンは StudyReel：淡いラベンダーの 1 系統、細い線、セリフの見出しと数字。
-// 窓の明かり（バター色）と夕方の空（ピーチ）は、題材（街の明かり・空）に理由がある所だけ。
+// 世界：夕暮れの工事現場と、その向こうの街。
+// 地はアスファルトの夜の色、主な色は安全色の黄（と黒の縞）、窓の灯りは琥珀、数字は工事看板のような太い詰めた書体。
 enum Theme {
-    // 地と文字
-    static let paper = Color(hex: 0xF6F5FA)
-    static let ink = Color(hex: 0x2F2E44)
-    static let sub = Color(hex: 0x8C8AA3)
-    static let line = Color(hex: 0xE3E0EE)
+    // 地と文字（アスファルトと、看板の白ペンキ）
+    static let paper = Color(hex: 0x15171F)
+    static let paperTop = Color(hex: 0x1D1A2B)
+    static let ink = Color(hex: 0xF3EFE4)
+    static let sub = Color(hex: 0x8F95A7)
+    static let line = Color(hex: 0x2F3445)
 
-    // 主な色（ラベンダー）の 5 段階
-    static let accent = Color(hex: 0xC4BAE6)
-    static let soft = Color(hex: 0xECE8F7)
-    static let deep = Color(hex: 0x7468AE)
-    static let card = Color(hex: 0xFBFAFD)
-    static let tape = Color(hex: 0xF3D3C6)
+    // 安全色の黄の段階
+    static let accent = Color(hex: 0xFFC72C)   // 安全色の黄（主役）
+    static let deep = Color(hex: 0xFFC72C)     // 文字・印に使う黄（暗い地の上で読める）
+    static let amber = Color(hex: 0xE39A1F)    // 黄の一段濃いところ（進み具合の途中）
+    static let soft = Color(hex: 0x2A2F3E)     // 鉄板の明るい面（選んだ物・進み具合の溝）
+    static let card = Color(hex: 0x20242F)     // 鉄板（看板・札）
+    static let hazardBlack = Color(hex: 0x111216)
+    static let cone = Color(hex: 0xFF7A1A)     // カラーコーンの橙（ぐらぐら・旗）
 
-    // 題材の色：窓の明かり・夕方の空・街路樹
-    static let window = Color(hex: 0xF2DC94)
-    static let dusk = Color(hex: 0xF4C5B2)
-    static let skyTop = Color(hex: 0xDCE4F2)
-    static let leaf = Color(hex: 0xBFD3AE)
+    // 題材の色：窓の灯り・夕焼け・街路樹
+    static let window = Color(hex: 0xFFC765)
+    static let dusk = Color(hex: 0xF2884B)
+    static let leaf = Color(hex: 0x6E9C5A)
+    static let concrete = Color(hex: 0x495063)
+    static let snow = Color(hex: 0xE7ECF3)
 
-    // 夜景・雪（Pro のテーマ）
-    static let nightTop = Color(hex: 0x2A2B47)
-    static let nightBottom = Color(hex: 0x4B4870)
-    static let nightBuilding = Color(hex: 0x3A3A5E)
-    static let nightLine = Color(hex: 0x8C86C2)
-    static let snow = Color(hex: 0xFDFDFF)
-
-    // 書体：見出しと数字はセリフ、本文はサンセリフ
-    /// 日本語は明朝（ヒラギノ明朝）、英語は New York。システムのセリフは日本語に明朝を当てないため、言語で分ける
-    static func serif(_ size: CGFloat, _ weight: Font.Weight = .regular) -> Font {
-        if Lang.isJapanese {
-            return .custom(weight == .regular ? "HiraMinProN-W3" : "HiraMinProN-W6", size: size)
-        }
-        return .system(size: size, weight: weight, design: .serif)
+    // 書体：見出しと数字は工事看板のような太く詰めた書体、本文はふつうのゴシック
+    static func display(_ size: CGFloat) -> Font {
+        .system(size: size, weight: .black).width(.condensed)
     }
-    static func label(_ size: CGFloat = 11) -> Font { .system(size: size, weight: .medium) }
+    /// 数字（大きな回数・秒）。さらに詰めた幅で、桁をそろえる
+    static func number(_ size: CGFloat) -> Font {
+        .system(size: size, weight: .black).width(.compressed).monospacedDigit()
+    }
+    static func label(_ size: CGFloat = 11) -> Font { .system(size: size, weight: .bold).width(.expanded) }
 
-    // 角丸の段階
-    static let radiusS: CGFloat = 8
-    static let radiusM: CGFloat = 14
-    static let radiusL: CGFloat = 20
+    // 角丸の段階（鉄板と看板なので、角はほとんど丸めない）
+    static let radiusS: CGFloat = 3
+    static let radiusM: CGFloat = 6
+    static let radiusL: CGFloat = 10
 
     // 線
-    static let hairline: CGFloat = 0.8
+    static let hairline: CGFloat = 1
 }
 
-/// ブロックの出来ごとの色（頑丈＝濃い線と淡い塗り、ふつう＝白、ぐらぐら＝点線）
+/// ブロックの出来ごとの色（頑丈＝黄の縁のコンクリート、ふつう＝灰の縁、ぐらぐら＝橙の点線）
 extension BlockQuality {
     var fill: Color {
         switch self {
-        case .sturdy: Theme.soft
-        case .normal: Theme.card
+        case .sturdy: Theme.concrete
+        case .normal: Theme.concrete.opacity(0.75)
         case .wobbly: Theme.card
         }
     }
 
     var stroke: Color {
         switch self {
-        case .sturdy: Theme.deep
-        case .normal: Theme.accent
-        case .wobbly: Theme.sub
+        case .sturdy: Theme.accent
+        case .normal: Color(hex: 0x8A91A5)
+        case .wobbly: Theme.cone
         }
     }
 }
@@ -77,68 +74,140 @@ extension Color {
     }
 }
 
-/// 小さなラベル（字間を開ける）
-struct Eyebrow: View {
-    let text: String
+/// 黄と黒の縞（工事の柵・看板の帯）
+struct HazardStripe: View {
+    var stripe: CGFloat = 9
     var body: some View {
-        Text(text.uppercased())
-            .font(Theme.label(10.5))
-            .kerning(0.8)
-            .foregroundStyle(Theme.sub)
+        Canvas { ctx, size in
+            ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Theme.hazardBlack))
+            var path = Path()
+            var x: CGFloat = -size.height
+            while x < size.width + size.height {
+                path.move(to: CGPoint(x: x, y: size.height))
+                path.addLine(to: CGPoint(x: x + size.height, y: 0))
+                path.addLine(to: CGPoint(x: x + size.height + stripe, y: 0))
+                path.addLine(to: CGPoint(x: x + stripe, y: size.height))
+                path.closeSubpath()
+                x += stripe * 2
+            }
+            ctx.fill(path, with: .color(Theme.accent))
+        }
+        .accessibilityHidden(true)
     }
 }
 
-/// 細い線の札（カードの代わりに、図面の枠のような細い線で囲む）
+/// 小さなラベル（看板の字のように、横に広げて字間を開ける）
+struct Eyebrow: View {
+    let text: String
+    var color: Color = Theme.sub
+    var body: some View {
+        Text(text.uppercased())
+            .font(Theme.label(10.5))
+            .kerning(1.2)
+            .foregroundStyle(color)
+    }
+}
+
+/// 鉄板の看板（四隅にボルト。stripe で上に黄と黒の帯）
 struct Plate<Content: View>: View {
     var padding: CGFloat = 14
+    var stripe = false
     @ViewBuilder var content: Content
     var body: some View {
         content
             .padding(padding)
+            .padding(.top, stripe ? 6 : 0)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Theme.card.opacity(0.85), in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+            .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+            .overlay(alignment: .top) {
+                if stripe { HazardStripe(stripe: 7).frame(height: 6) }
+            }
+            .overlay { Bolts() }
+            .clipShape(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.line, lineWidth: Theme.hairline))
     }
 }
 
-/// 主なボタン：白文字は濃い色の上だけ。グラデーションは使わない
-struct PrimaryButtonStyle: ButtonStyle {
-    var enabled = true
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.system(size: 16, weight: .semibold))
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity, minHeight: 52)
-            .background(enabled ? Theme.deep : Theme.sub.opacity(0.5), in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
-            .scaleEffect(configuration.isPressed ? 0.97 : 1)
-            .animation(.spring(response: 0.25, dampingFraction: 0.8), value: configuration.isPressed)
+/// 看板の四隅のボルト
+struct Bolts: View {
+    var body: some View {
+        GeometryReader { geo in
+            let inset: CGFloat = 6
+            ForEach(0..<4, id: \.self) { k in
+                Circle()
+                    .fill(Theme.line)
+                    .overlay(Circle().stroke(Color.black.opacity(0.35), lineWidth: 0.5))
+                    .frame(width: 4, height: 4)
+                    .position(x: k % 2 == 0 ? inset : geo.size.width - inset,
+                              y: k < 2 ? inset + 6 : geo.size.height - inset)
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 }
 
+/// 主なボタン：安全色の黄に黒い字。押すと重い鉄のボタンのように沈む
+struct PrimaryButtonStyle: ButtonStyle {
+    var enabled = true
+    func makeBody(configuration: Configuration) -> some View {
+        let pressed = configuration.isPressed
+        configuration.label
+            .font(.system(size: 17, weight: .heavy))
+            .foregroundStyle(enabled ? Theme.hazardBlack : Theme.sub)
+            .frame(maxWidth: .infinity, minHeight: 52)
+            .background(enabled ? Theme.accent : Theme.soft, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+            .overlay(alignment: .leading) {
+                if enabled { HazardStripe(stripe: 5).frame(width: 10).clipShape(UnevenRoundedRectangle(topLeadingRadius: Theme.radiusM, bottomLeadingRadius: Theme.radiusM)) }
+            }
+            .background(
+                RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous)
+                    .fill(enabled ? Theme.amber.opacity(0.55) : Color.black.opacity(0.4))
+                    .offset(y: pressed ? 0 : 4)
+            )
+            .offset(y: pressed ? 3 : 0)
+            .animation(.spring(response: 0.18, dampingFraction: 0.7), value: pressed)
+    }
+}
+
+/// 控えめなボタン：鉄板に黄の縁
 struct QuietButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 14, weight: .medium))
-            .foregroundStyle(Theme.deep)
+            .font(.system(size: 14, weight: .bold))
+            .foregroundStyle(Theme.accent)
             .frame(minHeight: 44)
             .padding(.horizontal, 14)
-            .background(Theme.soft.opacity(configuration.isPressed ? 1 : 0.7), in: Capsule())
-            .overlay(Capsule().stroke(Theme.accent.opacity(0.6), lineWidth: Theme.hairline))
+            .background(configuration.isPressed ? Theme.soft : Theme.card, in: RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: Theme.radiusM, style: .continuous).stroke(Theme.accent.opacity(0.7), lineWidth: 1.2))
             .scaleEffect(configuration.isPressed ? 0.96 : 1)
     }
 }
 
-/// 図面の方眼（細い線）。画面の地に、薄く敷く
-struct Blueprint: View {
-    var spacing: CGFloat = 22
+/// 画面の地：夕暮れの空の名残りと、端に組んだ足場（鉄パイプと筋交い）
+struct SiteBackdrop: View {
     var body: some View {
         Canvas { ctx, size in
-            var path = Path()
-            var x: CGFloat = 0
-            while x < size.width { path.move(to: CGPoint(x: x, y: 0)); path.addLine(to: CGPoint(x: x, y: size.height)); x += spacing }
-            var y: CGFloat = 0
-            while y < size.height { path.move(to: CGPoint(x: 0, y: y)); path.addLine(to: CGPoint(x: size.width, y: y)); y += spacing }
-            ctx.stroke(path, with: .color(Theme.accent.opacity(0.16)), lineWidth: 0.5)
+            ctx.fill(Path(CGRect(origin: .zero, size: size)),
+                     with: .linearGradient(Gradient(colors: [Theme.paperTop, Theme.paper]), startPoint: .zero, endPoint: CGPoint(x: 0, y: size.height * 0.45)))
+            // 足場：左右の端だけに（文字の下には敷かない）
+            let bay: CGFloat = 46
+            let lift: CGFloat = 70
+            for edge in [CGFloat(0), size.width - bay] {
+                var pipe = Path()
+                for x in [edge, edge + bay] {
+                    pipe.move(to: CGPoint(x: x, y: 0)); pipe.addLine(to: CGPoint(x: x, y: size.height))
+                }
+                var y: CGFloat = 0
+                var flip = false
+                while y < size.height {
+                    pipe.move(to: CGPoint(x: edge, y: y)); pipe.addLine(to: CGPoint(x: edge + bay, y: y))
+                    pipe.move(to: CGPoint(x: flip ? edge : edge + bay, y: y)); pipe.addLine(to: CGPoint(x: flip ? edge + bay : edge, y: y + lift))
+                    flip.toggle()
+                    y += lift
+                }
+                ctx.stroke(pipe, with: .color(Theme.line.opacity(0.55)), lineWidth: 1.2)
+            }
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)

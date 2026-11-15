@@ -359,7 +359,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "low"
+            "value": "LOW"
           }
         }
       }
@@ -2295,7 +2295,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Goal %d"
+            "value": "GOAL %d"
           }
         }
       }
